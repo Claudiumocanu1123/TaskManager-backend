@@ -18,8 +18,8 @@ public class TaskService {
         if(title == null || title.isEmpty()) {
             throw new IllegalArgumentException("title cannot be null or empty");
         }
-        if(description == null || description.isEmpty()) {
-            throw new IllegalArgumentException("description cannot be null or empty");
+        if(description == null ) {
+            description = "";
         }
         Task task = new Task(title,description,false,null);
         return repository.save(task);
