@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
+
 @RestController
 @RequestMapping("/api/tasks")
 public class TaskController {
@@ -27,6 +29,15 @@ public class TaskController {
     public Task createTask(@RequestParam String title, @RequestParam(required = false) String description) {
         return taskService.createTask(title, description);
     }
+    @DeleteMapping("/{id}")
+    public void deleteTask(@PathVariable Long id) {
+        taskService.deleteTaskById(id);
+    }
+    @PutMapping("/{id}")
+    public Task updateTask(@PathVariable Long id, @RequestParam String title) {
+        return taskService.updateTask(id, title);
+    }
+
 
 
 

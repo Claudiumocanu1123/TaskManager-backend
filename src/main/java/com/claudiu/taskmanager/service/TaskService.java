@@ -21,7 +21,7 @@ public class TaskService {
         if(description == null ) {
             description = "";
         }
-        Task task = new Task(title,description,false,null);
+        Task task = new Task(title,description,false);
         return repository.save(task);
     }
     public List<Task> getAllTasks()
@@ -35,11 +35,16 @@ public class TaskService {
     public Task completeTask(Long id) {
         Task task = repository.findById(id).orElseThrow(()->new RuntimeException("Task not found"));
         task.setCompleted(true);
-        task.setCompletedAt(LocalDateTime.now());
         return repository.save(task);
     }
     public void deleteTaskById(Long id) {
         repository.deleteById(id);
+    }
+    public Task updateTask(Long id, String title) {
+        Task task = repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Task not found"));
+        task.setTitle(title);
+        return repository.save(task);
     }
 
 }

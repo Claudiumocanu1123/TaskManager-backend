@@ -14,17 +14,14 @@ public class Task {
     private String title;
     private String description;
     private boolean completed;
-    @Column(name = "completed_at")
-    private LocalDateTime completedAt;
 
     public Task() {
 
     }
-    public Task( String title, String description, boolean completed, LocalDateTime completedAt) {
+    public Task( String title, String description, boolean completed) {
         this.title = title;
         this.description = description;
         this.completed = completed;
-        this.completedAt = completedAt;
     }
     public Long getId() {
         return id;
@@ -50,15 +47,10 @@ public class Task {
     public void setCompleted(boolean completed) {
         this.completed = completed;
     }
-    public LocalDateTime getCompletedAt() {
-        return completedAt;
-    }
-    public void setCompletedAt(LocalDateTime completedAt) {
-        this.completedAt = completedAt;
-    }
+
     public String toString()
     {
-        return id + " " + title + " " + description + " " + completedAt + " " + completed;
+        return id + " " + title + " " + description +  " " + completed;
     }
 
 }
