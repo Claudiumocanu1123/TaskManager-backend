@@ -40,10 +40,11 @@ public class TaskService {
     public void deleteTaskById(Long id) {
         repository.deleteById(id);
     }
-    public Task updateTask(Long id, String title) {
+    public Task updateTask(Long id, String title,String description) {
         Task task = repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Task not found"));
         task.setTitle(title);
+        task.setDescription(description);
         return repository.save(task);
     }
 

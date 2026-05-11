@@ -34,8 +34,8 @@ public class TaskController {
         taskService.deleteTaskById(id);
     }
     @PutMapping("/{id}")
-    public Task updateTask(@PathVariable Long id, @RequestParam String title) {
-        return taskService.updateTask(id, title);
+    public Task updateTask(@PathVariable Long id, @RequestParam String title, @RequestParam(required = false) String description) {
+        return taskService.updateTask(id, title,description);
     }
     @PatchMapping("/{id}/complete")
     public Task completeTask(@PathVariable Long id) {

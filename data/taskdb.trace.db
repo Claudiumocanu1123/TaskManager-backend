@@ -1,0 +1,12 @@
+2026-05-11 17:52:13.596622+03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TASKS" not found (this database is empty); SQL statement:
+insert into tasks (completed,description,title,id) values (?,?,?,default) [42104-232]
+2026-05-11 17:52:13.921495+03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TASKS" not found (this database is empty); SQL statement:
+select t1_0.id,t1_0.completed,t1_0.description,t1_0.title from tasks t1_0 [42104-232]
+2026-05-11 17:52:18.716268+03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TASKS" not found (this database is empty); SQL statement:
+insert into tasks (completed,description,title,id) values (?,?,?,default) [42104-232]
+2026-05-11 17:52:18.735689+03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TASKS" not found (this database is empty); SQL statement:
+select t1_0.id,t1_0.completed,t1_0.description,t1_0.title from tasks t1_0 [42104-232]
