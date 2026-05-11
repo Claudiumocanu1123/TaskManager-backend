@@ -37,6 +37,10 @@ public class TaskController {
     public Task updateTask(@PathVariable Long id, @RequestParam String title) {
         return taskService.updateTask(id, title);
     }
+    @PatchMapping("/{id}/complete")
+    public Task completeTask(@PathVariable Long id) {
+        return taskService.completeTask(id);
+    }
 
 
 
